@@ -196,15 +196,14 @@ export default function App() {
     }
   }, [score, highScore]);
 
-  // Ensure at least 3 rows of blocks
+  // Ensure at least 4 rows of blocks (4 rows * 6 columns = 24 blocks)
   useEffect(() => {
     if (mode && !isGameOver && !isPaused) {
-      const occupiedRows = new Set(grid.map(b => b.row)).size;
-      if (occupiedRows < 3) {
+      if (grid.length < 24) {
         addNewRow();
       }
     }
-  }, [grid, mode, isGameOver, isPaused, addNewRow]);
+  }, [grid.length, mode, isGameOver, isPaused, addNewRow]);
 
   if (!mode) {
     return (
@@ -341,8 +340,8 @@ export default function App() {
           </AnimatePresence>
 
           {/* Current Selection Info */}
-          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-            <div className={`px-3 py-1 bg-white border border-[#141414] text-xs font-mono font-bold uppercase transition-opacity ${selectedIds.length > 0 ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between z-50 pointer-events-none">
+            <div className="px-3 py-1 bg-white border-2 border-[#141414] text-xs font-mono font-bold uppercase shadow-[4px_4px_0px_0px_rgba(20,20,20,1)]">
               总和 Sum: {currentSum} / {target}
             </div>
           </div>

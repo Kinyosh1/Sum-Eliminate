@@ -1,6 +1,6 @@
 export const GRID_COLS = 6;
 export const GRID_ROWS = 12;
-export const INITIAL_ROWS = 5;
+export const INITIAL_ROWS = 7;
 export const MIN_VALUE = 1;
 export const MAX_VALUE = 9;
 export const MIN_TARGET = 30;
