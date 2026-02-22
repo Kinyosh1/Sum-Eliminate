@@ -1,0 +1,5 @@
+{
+  "name": "SumEliminate - Math Puzzle Game",
+  "description": "A high-performance mathematical summation elimination game. Match numbers to reach target sums and prevent the grid from filling up.",
+  "requestFramePermissions": []
+}
